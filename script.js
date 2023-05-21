@@ -94,6 +94,9 @@ try{
         } else if (ele > 10) {
             alert("Enter a number below 10");
             
+             } else if(ele < 1) {
+            alert("Enter a Number between 1 - 10")
+             }
         } else {
             
             // Scroll to the element with the specified ID[ line.no:92-94;Ref :online]
