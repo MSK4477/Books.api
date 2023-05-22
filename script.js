@@ -2,7 +2,7 @@ async function bar() {
     const apiFetch = await fetch("https://www.anapioficeandfire.com/api/books");
     const apiFetch1 = await apiFetch.json();
 
-//     console.log(apiFetch1);
+    //     console.log(apiFetch1);
 
     let Books = apiFetch1
 
@@ -16,16 +16,16 @@ async function bar() {
 
     div1 = document.createElement("div")
     div1.setAttribute("class", 'heading')
-    
+
     let head = document.createElement("header")
     head.innerText = "Books And Book Details"
-    
+
     div1.append(head)
     document.body.append(div1);
-    
+
     const searchData = document.createElement("div")
     searchData.setAttribute("class", "data")
-    
+
     const div2 = document.createElement("div")
     div2.setAttribute("class", "ip")
 
@@ -40,7 +40,7 @@ async function bar() {
 
     const button = document.createElement("button")
     button.setAttribute("type", "submit")
-    button.setAttribute("id","btn")
+    button.setAttribute("id", "btn")
     button.classList.add("btn", "btn-primary")
     button.innerText = "Enter"
 
@@ -67,12 +67,12 @@ async function bar() {
         row.innerHTML += `<div class="col-sm-4" id="#${bookNo[i]}">
           <div class="card border-primary mb-3" style="max-width: 30emb;">
             <div class="card-header">Book No ${bookNo[i]}: </div>
-            <p >Name: ${Books[i].name}</p>
-            <p>ISBN: ${Books[i].isbn}</p>
-            <p>No.0f.Pages: ${Books[i].numberOfPages}</p>
-            <p>Authors: ${Books[i].authors}</p>
-            <p>Publisher: ${Books[i].publisher}</p>
-            <p>Released on: ${Books[i].released}</p>
+            <p class="p">Name: ${Books[i].name}</p>
+            <p class="p">ISBN: ${Books[i].isbn}</p>
+            <p class="p">No.0f.Pages: ${Books[i].numberOfPages}</p>
+            <p class="p">Authors: ${Books[i].authors}</p>
+            <p class="p">Publisher: ${Books[i].publisher}</p>
+            <p class="p">Released on: ${Books[i].released}</p>
             
           </div>
         </div>`;
@@ -82,54 +82,60 @@ async function bar() {
     document.body.append(container);
 
     button.addEventListener("click", () => {
-try{
-        var ele = document.getElementById("txt").value;
-        let No = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+        try {
+            var ele = document.getElementById("txt").value;
+            let No = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-        if (isNaN(ele)) {
-            alert('Enter a valid number');
-            
-        } else if (ele === "") {
-            alert("Enter a number");
-            
-        } else if (ele > 10) {
-            alert("Enter a number below 10");
-            
-             } else if(ele < 1) {
-            alert("Enter a Number between 1 - 10")
-             
-        } else {
-            
-            // Scroll to the element with the specified ID[ line.no:92-94;Ref :online]
-            
-            const element = document.getElementById(`#${No[ele - 1]}`);
-            if (element) {
-                element.scrollIntoView({ behavior: "smooth" });
+            if (isNaN(ele)) {
+                alert('Enter a valid number');
 
-                // Change the color of the card-header element
+            } else if (ele === "") {
+                alert("Enter a number");
+
+            } else if (ele > 10) {
+                alert("Enter a number below 10");
+
+            } else if (ele < 1) {
+                alert("Enter a Number between 1 - 10")
+
+            } else {
+
                 
-                const cardHeader = element.querySelector(".card-header");
-                if (cardHeader) {
-                    cardHeader.style.color = "black";
-                    
 
-                    const paragraphs = element.querySelectorAll('p')
-                    if (paragraphs) {
+                const element = document.getElementById(`#${No[ele - 1]}`);
+                if (element) {
 
-                        //if we use queryselectorAll 
-                        //we need to  use forEach or for loops to access every elements in that tag
+                    // Scroll to the element with the specified ID[ line.no:92-94;Ref :online]
+                    element.scrollIntoView({ behavior: "smooth" });
 
-                        paragraphs.forEach((paragraph) => {
+                    // Change the color of the card-header element
 
-                            paragraph.style.color = "grey"
-                        })
+                    const cardHeader = element.querySelector(".card-header");
+                    if (cardHeader) {
+                        cardHeader.style.color = "black";
+
+
+                        const paragraphs = element.querySelectorAll('.p')
+                        if (paragraphs) {
+
+                            //if we use queryselectorAll 
+                            //we need to  use forEach or for loops to access every elements in that tag
+
+                            paragraphs.forEach(paragraph => {
+
+                                paragraph.style.color = "grey"
+
+                                // console.log(paragraph.textContent);
+
+                            })
+                        }
+
                     }
                 }
             }
+        } catch (error) {
+            console.error("An error occurred:", error);
         }
-    } catch (error) {
-        console.error("An error occurred:", error);
-    }
     });
 
 
