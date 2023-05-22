@@ -40,6 +40,7 @@ async function bar() {
 
     const button = document.createElement("button")
     button.setAttribute("type", "submit")
+    button.setAttribute("id","btn")
     button.classList.add("btn", "btn-primary")
     button.innerText = "Enter"
 

@@ -33,9 +33,15 @@ body {
     top: 0px;
   }
   
-  #txt {
+  .ip {
     position: relative;
-    left: 510px;
-    top: 20px;
+    top: 27px;
+   text-align: center;
+  }
+  #btn{
+   text-align: center;
+   width: 7em;
+   height: 37px;
+
   }
   
