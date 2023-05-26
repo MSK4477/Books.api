@@ -106,7 +106,7 @@ async function bar() {
                 const element = document.getElementById(`#${No[ele - 1]}`);
                 if (element) {
 
-                    // Scroll to the element with the specified ID[ line.no:92-94;Ref :online]
+                    // Scroll to the element with the specified ID[ line.no:110;Ref :online]
                     element.scrollIntoView({ behavior: "smooth" });
 
                     // Change the color of the card-header element
@@ -116,7 +116,7 @@ async function bar() {
                         cardHeader.style.color = "black";
 
 
-                        const paragraphs = element.querySelectorAll('.p')
+                        const paragraphs = element.querySelectorAll('p')
                         if (paragraphs) {
 
                             //if we use queryselectorAll 
